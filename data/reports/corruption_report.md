@@ -20,10 +20,10 @@ identical with, baseline.
 
 | Ragas metric | Baseline | Corrupted | Repaired |
 | --- | ---: | ---: | ---: |
-| `answer_relevancy` | 0.2412 | 0.1242 | 0.2469 |
-| `context_precision` | 0.9774 | 0.8906 | 0.9774 |
-| `context_recall` | 1.0000 | 0.8750 | 1.0000 |
-| `faithfulness` | 1.0000 | 0.3438 | 0.9688 |
+| `answer_relevancy` | 0.2412 | 0.1244 | 0.2146 |
+| `context_precision` | 0.9774 | 0.9219 | 0.9896 |
+| `context_recall` | 1.0000 | 0.8125 | 1.0000 |
+| `faithfulness` | 1.0000 | 0.3125 | 0.9375 |
 
 ## Quality and freshness signals
 

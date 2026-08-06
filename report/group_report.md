@@ -20,7 +20,7 @@
 
 ## 2. Tóm tắt kết quả
 
-Bài làm đã hoàn thành pipeline RAG có quan sát dữ liệu từ đầu đến cuối: lấy 24 bài báo từ Crossref, lưu raw snapshot, chuẩn hóa dữ liệu, tạo văn bản embedding, sinh vector 384 chiều bằng MiniLM, lập ba collection ChromaDB độc lập và đánh giá bằng một test set cố định gồm 16 câu hỏi. Baseline sinh đầy đủ raw, clean, embedding, answers, metrics, quality, freshness và Markdown report. Sáu kịch bản tạo lỗi có log gồm xóa năm bản ghi mới nhất, xóa tóm tắt, chèn noise, cắt tiêu đề, làm cũ ngày công bố và nhân đôi bản ghi. Tác động rõ nhất là xóa các tài liệu ground truth mới nhất, làm retrieval hit rate giảm từ `1.0` xuống `0.0`; quality chỉ còn 7/12 kiểm tra đạt và faithfulness giảm từ `1.0` xuống `0.3438`. Repair được thực hiện theo kiểu tái dựng pipeline từ raw snapshot đáng tin cậy, không sửa tay answer hoặc metrics. Sau repair, số dòng trở lại 24, quality đạt 12/12, freshness trở lại `fresh`, các core metrics trở về baseline và Ragas trở lại mức tương đương. Giới hạn chính là test set còn nhỏ, tập trung vào bốn tài liệu mới nhất và Ragas có dao động do LLM evaluator.
+Bài làm đã hoàn thành pipeline RAG có quan sát dữ liệu từ đầu đến cuối: lấy 24 bài báo từ Crossref, lưu raw snapshot, chuẩn hóa dữ liệu, tạo văn bản embedding, sinh vector 384 chiều bằng MiniLM, lập ba collection ChromaDB độc lập và đánh giá bằng một test set cố định gồm 16 câu hỏi. Baseline sinh đầy đủ raw, clean, embedding, answers, metrics, quality, freshness và Markdown report. Sáu kịch bản tạo lỗi có log gồm xóa năm bản ghi mới nhất, xóa tóm tắt, chèn noise, cắt tiêu đề, làm cũ ngày công bố và nhân đôi bản ghi. Tác động rõ nhất là xóa các tài liệu ground truth mới nhất, làm retrieval hit rate giảm từ `1.0` xuống `0.0`; quality chỉ còn 7/12 kiểm tra đạt và faithfulness giảm từ `1.0` xuống `0.3125`. Repair được thực hiện theo kiểu tái dựng pipeline từ raw snapshot đáng tin cậy, không sửa tay answer hoặc metrics. Sau repair, số dòng trở lại 24, quality đạt 12/12, freshness trở lại `fresh`, các core metrics trở về baseline và Ragas trở lại mức tương đương. Giới hạn chính là test set còn nhỏ, tập trung vào bốn tài liệu mới nhất và Ragas có dao động do LLM evaluator.
 
 ## 3. Kiến trúc và luồng dữ liệu
 
@@ -173,13 +173,15 @@ Freshness được đo trên cleaned dataframe. Baseline có ngày mới nhất 
 
 ## 9. Corruption scenarios và repair
 
+Artifact dữ liệu lỗi bắt buộc của C4 là `data/clean/papers_corrupted.csv`; pipeline ghi file này rồi đọc lại bằng pandas trước khi dựng collection `papers-corrupted`.
+
 | Corruption | Cách tạo | Bản ghi bị tác động | Tín hiệu/tác động thực tế | Repair |
 | --- | --- | ---: | --- | --- |
 | Drop latest | Xóa 20% bản ghi mới nhất | 5 | Mất các ground-truth docs; hit rate còn 0.0 | Tái dựng từ raw snapshot |
 | Blank summary | Gán chuỗi rỗng | 1 | `summary_complete` fail | Cleaning lại từ raw |
 | Inject noise | Chèn marker `CORRUPTED NOISE` | 1 | Noise check fail, một answer sai nặng | Cleaning lại và re-embed |
 | Truncate title | Giữ 9/23 ký tự | 1 | Exact-title lookup suy giảm | Khôi phục title từ raw |
-| Make stale | Đổi ngày thành 2016-08-08 | 1 | Freshness thành stale, 5% dòng quá cũ | Parse lại ngày nguồn |
+| Make stale | Đổi ngày thành 2000-01-01 | 1 | Freshness thành stale, 5% dòng quá cũ | Parse lại ngày nguồn |
 | Duplicate row | Nhân đôi, giữ nguyên ID | 1 | 2 dòng nằm trong nhóm duplicate | Deduplicate bằng cleaning contract |
 
 `data/results/corruption_log.json` lưu đủ loại lỗi, ID bị ảnh hưởng, số lượng và tham số. Repair trong bài là **pipeline recovery by reconstruction**: đọc lại raw snapshot đã lưu trước corruption, chạy lại cùng cleaning contract, tạo embedding mới và ghi vào collection repaired độc lập. Cách này không đoán giá trị từng ô và không chỉnh sửa metrics; nó chứng minh khả năng tái lập trạng thái phục vụ từ nguồn tin cậy khi derived dataset/index bị hỏng.
@@ -192,10 +194,10 @@ Freshness được đo trên cleaned dataframe. Baseline có ngày mới nhất 
 | Mean token F1 | 1.0000 | 0.7921 | 1.0000 | -0.2079 | 100% | Answer lexical trở về baseline |
 | Judge accuracy | 1.0000 | 0.7500 | 1.0000 | -0.2500 | 100% | 12/16 rồi trở lại 16/16 |
 | Mean judge score | 5.0000 | 4.0625 | 5.0000 | -0.9375 | 100% | Điểm core phục hồi hoàn toàn |
-| Ragas answer relevancy | 0.2412 | 0.1242 | 0.2469 | -0.1170 | Tương đương | Có dao động evaluator |
-| Ragas context precision | 0.9774 | 0.8906 | 0.9774 | -0.0868 | 100% | Trở đúng baseline |
-| Ragas context recall | 1.0000 | 0.8750 | 1.0000 | -0.1250 | 100% | Bao phủ context được khôi phục |
-| Ragas faithfulness | 1.0000 | 0.3438 | 0.9688 | -0.6562 | 95.31% | Gần baseline, không tuyên bố giống tuyệt đối |
+| Ragas answer relevancy | 0.2412 | 0.1244 | 0.2146 | -0.1168 | 77.17% | Phục hồi phần lớn; evaluator có dao động |
+| Ragas context precision | 0.9774 | 0.9219 | 0.9896 | -0.0556 | Vượt baseline | Chênh lệch nhỏ do LLM evaluator |
+| Ragas context recall | 1.0000 | 0.8125 | 1.0000 | -0.1875 | 100% | Bao phủ context được khôi phục |
+| Ragas faithfulness | 1.0000 | 0.3125 | 0.9375 | -0.6875 | 90.91% | Gần baseline, không tuyên bố giống tuyệt đối |
 | Quality checks | 12/12 pass | 7/12 pass | 12/12 pass | 5 check fail | 100% | Phát hiện đúng lỗi đã chèn |
 | Freshness | Fresh | Stale | Fresh | 1/20 stale | 100% | Trở lại 0/24 stale |
 

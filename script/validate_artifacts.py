@@ -75,12 +75,35 @@ def main() -> None:
     baseline = read_json(paths.clean_json)
     corrupted = read_json(paths.corrupted_clean_json)
     repaired = read_json(paths.repaired_clean_json)
+    corruption_log = read_json(paths.corruption_log)
+    test_set = read_json(paths.eval_testset)
     baseline_ids = [item["paper_id"] for item in baseline]
     repaired_ids = [item["paper_id"] for item in repaired]
     if baseline_ids != repaired_ids:
         errors.append("Repaired document lineage does not match baseline lineage.")
     if len(corrupted) >= len(baseline):
         errors.append("Corrupted dataset did not reduce net row count as expected.")
+    if paths.corrupted_clean_csv.name != "papers_corrupted.csv":
+        errors.append("C4 corrupted CSV does not use the required papers_corrupted.csv name.")
+    if not any(str(item.get("published", "")).startswith("2000-") for item in corrupted):
+        errors.append("C4 corrupted data does not contain a year-2000 stale-date scenario.")
+
+    event_types = {str(event.get("type")) for event in corruption_log.get("events", [])}
+    if len(event_types) < 3:
+        errors.append("C4 requires at least three distinct corruption scenarios.")
+    frozen_ids = {
+        str(doc_id)
+        for item in test_set
+        for doc_id in item.get("ground_truth_doc_ids", [])
+    }
+    affected_ids = {
+        str(doc_id)
+        for event in corruption_log.get("events", [])
+        for doc_id in event.get("affected_paper_ids", [])
+    }
+    corruption_overlap = sorted(frozen_ids & affected_ids)
+    if not corruption_overlap:
+        errors.append("C4 corruption does not overlap the frozen evaluation documents.")
     for manifest, records, state in zip(
         manifests, (baseline, corrupted, repaired), ("baseline", "corrupted", "repaired"), strict=True
     ):
@@ -106,6 +129,8 @@ def main() -> None:
             "corrupted": len(corrupted),
             "repaired": len(repaired),
         },
+        "corruption_events": sorted(event_types),
+        "frozen_test_overlap_ids": corruption_overlap,
         "agent_backend": agent_demo.get("backend"),
         "ragas_models": sorted(ragas_models),
         "errors": errors,

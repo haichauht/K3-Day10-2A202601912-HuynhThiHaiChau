@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, datetime
 import math
 
 import pandas as pd
@@ -109,7 +109,9 @@ def corrupt_clean_dataframe(df: pd.DataFrame, output_log_path) -> pd.DataFrame:
     stale_index = target(3)
     stale_id = str(corrupted.at[stale_index, "paper_id"])
     original_published = str(corrupted.at[stale_index, "published"])
-    stale_date = (datetime.now(UTC).date() - timedelta(days=3650)).isoformat()
+    # C4 uses a fixed year-2000 value so the scenario is deterministic and
+    # unambiguously violates the freshness threshold on every rerun.
+    stale_date = "2000-01-01"
     corrupted.at[stale_index, "published"] = stale_date
     events.append(
         {

@@ -5,6 +5,7 @@ from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
+import sys
 import threading
 import time
 from typing import Any
@@ -336,7 +337,7 @@ class DemoDataStore:
                     "data/results/corruption_log.json",
                     "data/results/comparison_metrics.json",
                     "data/reports/corruption_report.md",
-                    "data/clean/papers_clean_corrupted.json",
+                    "data/clean/papers_corrupted.json",
                     "data/clean/papers_clean_repaired.json",
                 ],
                 "key_point": "Repair từ raw tránh để sót nhiễu trong file lỗi và chứng minh khả năng tái lập của cleaning contract.",
@@ -592,6 +593,13 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    # Windows may inherit a legacy console code page even when logs are
+    # redirected. Force UTF-8 so Vietnamese startup messages cannot crash the
+    # server before it begins serving requests.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8")
     args = parse_args()
     project_dir = Path(__file__).resolve().parents[1]
     DemoRequestHandler.static_dir = project_dir / "demo"

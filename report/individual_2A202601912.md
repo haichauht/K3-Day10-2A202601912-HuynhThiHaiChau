@@ -122,10 +122,10 @@ raw snapshot đáng tin cậy.
 | `mean_token_f1` | 1.0000 | 0.7921 | 1.0000 | Semantic gần nhau vẫn cho overlap, nhưng summary sai rõ rệt |
 | `judge_accuracy` | 1.0000 | 0.7500 | 1.0000 | 4/16 corrupted answers bị judge đánh sai |
 | `mean_judge_score` | 5.0000 | 4.0625 | 5.0000 | Giảm 0.9375 điểm rồi phục hồi hoàn toàn |
-| Ragas `answer_relevancy` | 0.2412 | 0.1242 | 0.2469 | Giảm khi lỗi và trở lại mức tương đương baseline |
-| Ragas `context_precision` | 0.9774 | 0.8906 | 0.9774 | Nguồn lỗi làm precision giảm |
-| Ragas `context_recall` | 1.0000 | 0.8750 | 1.0000 | Repair khôi phục đủ context cần thiết |
-| Ragas `faithfulness` | 1.0000 | 0.3438 | 0.9688 | Faithfulness giảm mạnh rồi phục hồi gần baseline |
+| Ragas `answer_relevancy` | 0.2412 | 0.1244 | 0.2146 | Giảm khi lỗi và phục hồi phần lớn sau repair |
+| Ragas `context_precision` | 0.9774 | 0.9219 | 0.9896 | Nguồn lỗi làm precision giảm; repaired dao động nhẹ trên baseline |
+| Ragas `context_recall` | 1.0000 | 0.8125 | 1.0000 | Repair khôi phục đủ context cần thiết |
+| Ragas `faithfulness` | 1.0000 | 0.3125 | 0.9375 | Faithfulness giảm mạnh rồi phục hồi gần baseline |
 | Quality checks | PASS 12/12 | FAIL (7/12 passed) | PASS 12/12 | Duplicate, missing/short summary, noise và stale bị phát hiện |
 | Freshness status | Fresh | Stale | Fresh | Corrupted có 1 stale row, repaired có 0 |
 

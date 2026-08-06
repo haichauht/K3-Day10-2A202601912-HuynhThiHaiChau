@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T07:31:29.496016+00:00",
+  "generated_at": "2026-08-06T07:59:44.995607+00:00",
   "test_set_path": "C:\\VinUni-Lab\\K3_Day10_2A202601912_HuynhThiHaiChau\\data\\eval\\test_set.json",
   "test_set_sha256": "af746223bd48c30b1ed0aacf938c2843c9bfd1232692d355ed28169a42b44280",
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -157,15 +157,15 @@
       "ragas": {
         "model": "gpt-4.1-mini",
         "samples": 16,
-        "answer_relevancy": 0.12423516923962849,
-        "context_precision": 0.8906249999632813,
-        "context_recall": 0.875,
-        "faithfulness": 0.34375
+        "answer_relevancy": 0.1244195724562843,
+        "context_precision": 0.9218749999664062,
+        "context_recall": 0.8125,
+        "faithfulness": 0.3125
       }
     },
     "quality": {
       "report_name": "corrupted",
-      "generated_at": "2026-08-06T07:30:25.142448+00:00",
+      "generated_at": "2026-08-06T07:58:00.111915+00:00",
       "row_count": 20,
       "overall_success": false,
       "passed_checks": 7,
@@ -276,10 +276,10 @@
       ]
     },
     "freshness": {
-      "generated_at": "2026-08-06T07:30:25.145417+00:00",
+      "generated_at": "2026-08-06T07:58:00.116972+00:00",
       "freshness_threshold_days": 180,
       "latest_published": "2026-08-06",
-      "oldest_published": "2016-08-08",
+      "oldest_published": "2000-01-01",
       "stale_rows": 1,
       "invalid_rows": 0,
       "total_rows": 20,
@@ -302,15 +302,15 @@
       "ragas": {
         "model": "gpt-4.1-mini",
         "samples": 16,
-        "answer_relevancy": 0.24689246985875668,
-        "context_precision": 0.9774305555236689,
+        "answer_relevancy": 0.21456748225181105,
+        "context_precision": 0.9895833333015625,
         "context_recall": 1.0,
-        "faithfulness": 0.96875
+        "faithfulness": 0.9375
       }
     },
     "quality": {
       "report_name": "repaired",
-      "generated_at": "2026-08-06T07:31:29.467811+00:00",
+      "generated_at": "2026-08-06T07:59:44.989711+00:00",
       "row_count": 24,
       "overall_success": true,
       "passed_checks": 12,
@@ -415,7 +415,7 @@
       ]
     },
     "freshness": {
-      "generated_at": "2026-08-06T07:31:29.471619+00:00",
+      "generated_at": "2026-08-06T07:59:44.993608+00:00",
       "freshness_threshold_days": 180,
       "latest_published": "2026-08-06",
       "oldest_published": "2026-08-06",

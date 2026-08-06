@@ -80,6 +80,8 @@ def test_crossref_parse_fetch_and_reload(tmp_path, monkeypatch):
 
 def test_clean_testset_corruption_and_observability(tmp_path):
     settings = load_settings(tmp_path)
+    assert settings.paths.corrupted_clean_csv.name == "papers_corrupted.csv"
+    assert settings.paths.corrupted_clean_json.name == "papers_corrupted.json"
     records = _records()
     clean = build_clean_dataframe(records, datetime.now(UTC))
 
@@ -113,6 +115,7 @@ def test_clean_testset_corruption_and_observability(tmp_path):
     }
     assert not corrupted["paper_id"].is_unique
     assert corrupted["summary"].eq("").any()
+    assert corrupted["published"].eq("2000-01-01").any()
     assert corrupted["age_days"].gt(settings.freshness_threshold_days).any()
 
     corrupted_quality = run_data_quality_checks(corrupted, settings, "corrupted-test")

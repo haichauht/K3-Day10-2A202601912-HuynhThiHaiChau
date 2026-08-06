@@ -11,9 +11,9 @@
   "ragas": {
     "model": "gpt-4.1-mini",
     "samples": 16,
-    "answer_relevancy": 0.12423516923962849,
-    "context_precision": 0.8906249999632813,
-    "context_recall": 0.875,
-    "faithfulness": 0.34375
+    "answer_relevancy": 0.1244195724562843,
+    "context_precision": 0.9218749999664062,
+    "context_recall": 0.8125,
+    "faithfulness": 0.3125
   }
 }

@@ -25,7 +25,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer, identifying the chapter\u2019s review of major policy process theories and its central conclusion that policy change results from a complex process shaped by many heterogeneous inputs.",
+      "reasoning": "The model answer exactly matches the reference answer, accurately identifying the chapter\u2019s review of major policy process theories and its central conclusion about complex, heterogeneous drivers of policy change.",
       "backend": "llm"
     }
   },
@@ -55,7 +55,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference answer, naming Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew as the authors.",
       "backend": "llm"
     }
   },
@@ -145,7 +145,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer and correctly identifies the chapter\u2019s main topic as developing the mixture model of politics.",
+      "reasoning": "The model answer exactly matches the reference answer, identifying that the chapter develops the mixture model of politics.",
       "backend": "llm"
     }
   },
@@ -175,7 +175,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer, naming Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew as the authors.",
+      "reasoning": "The model answer exactly matches the reference answer, naming Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew as the authors.",
       "backend": "llm"
     }
   },
@@ -265,7 +265,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer, identifying the chapter's main topic as introducing the Comparative Distributional Method (CDM) for statistically analysing policy change distributions.",
+      "reasoning": "The model answer exactly matches the reference answer, correctly identifying the chapter\u2019s introduction of the Comparative Distributional Method as a statistical approach for analyzing policy change distributions.",
       "backend": "llm"
     }
   },
@@ -295,7 +295,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
       "backend": "llm"
     }
   },
@@ -415,7 +415,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer, including all three authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
       "backend": "llm"
     }
   },

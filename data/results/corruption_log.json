@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-08-06T07:29:04.846432+00:00",
+  "created_at": "2026-08-06T07:56:23.137767+00:00",
   "deterministic": true,
   "baseline_rows": 24,
   "corrupted_rows": 20,
@@ -58,7 +58,7 @@
       "count": 1,
       "parameter": {
         "before": "2026-08-06",
-        "after": "2016-08-08"
+        "after": "2000-01-01"
       }
     },
     {

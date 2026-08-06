@@ -25,7 +25,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "The model answer is corrupted noise and does not identify the chapter\u2019s topic: policy process theories and the complex, heterogeneous factors shaping policy change.",
+      "reasoning": "The model answer is corrupted noise and does not identify the chapter\u2019s topic or its finding about policy process theories and complex, heterogeneous drivers of policy change.",
       "backend": "llm"
     }
   },
@@ -55,7 +55,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer, including all three authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
       "backend": "llm"
     }
   },
@@ -145,7 +145,7 @@
     "judge": {
       "score": 2,
       "correct": false,
-      "reasoning": "The answer mentions the mixture model but describes a broader discussion of the book\u2019s findings, theory, method, and applications rather than stating that the chapter develops the mixture model of politics. This is only partially aligned with the reference.",
+      "reasoning": "The answer mentions the mixture model but mischaracterizes the chapter as primarily discussing the book\u2019s findings, theory, method, and applications. The reference identifies its main topic as developing the mixture model of politics.",
       "backend": "llm"
     }
   },
@@ -175,7 +175,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
       "backend": "llm"
     }
   },
@@ -265,7 +265,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "The model answer does not identify the chapter\u2019s main topic: introducing the Comparative Distributional Method as a statistical approach for analyzing policy change distributions. Instead, it refers broadly to the book\u2019s findings, theoretical and methodological implications, and mixture-model applications.",
+      "reasoning": "The model answer does not identify the Comparative Distributional Method as a statistical approach for analysing policy change distributions. It instead refers broadly to the book's findings, theory, method, and a mixture model.",
       "backend": "llm"
     }
   },
@@ -295,7 +295,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference answer, including all three authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
       "backend": "llm"
     }
   },
@@ -415,7 +415,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer exactly matches the reference answer, including all three authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
+      "reasoning": "The model answer exactly matches the reference answer, naming Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew as the authors.",
       "backend": "llm"
     }
   },

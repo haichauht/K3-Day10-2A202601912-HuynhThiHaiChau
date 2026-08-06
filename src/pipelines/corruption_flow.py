@@ -55,8 +55,12 @@ def main() -> None:
     test_set = read_json(settings.paths.eval_testset)
     test_set_hash_before = file_sha256(settings.paths.eval_testset)
 
-    corrupted_df = corrupt_clean_dataframe(baseline_df, settings.paths.corruption_log)
-    write_csv(corrupted_df, settings.paths.corrupted_clean_csv)
+    generated_corrupted_df = corrupt_clean_dataframe(baseline_df, settings.paths.corruption_log)
+    write_csv(generated_corrupted_df, settings.paths.corrupted_clean_csv)
+
+    # C4 requires the experiment to consume the persisted corrupted artifact,
+    # rather than continuing with the dataframe that produced the file.
+    corrupted_df = pd.read_csv(settings.paths.corrupted_clean_csv, keep_default_na=False)
     write_json(settings.paths.corrupted_clean_json, dataframe_records(corrupted_df))
     corrupted_index = LocalEmbeddingIndex.build(
         corrupted_df, settings, settings.paths.corrupted_embeddings_json
