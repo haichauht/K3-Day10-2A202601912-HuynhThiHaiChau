@@ -8,8 +8,8 @@
 | --- | --- |
 | Khóa/Lớp | K3 |
 | Hình thức | Cá nhân (nhóm một thành viên) |
-| Repository | `K3_Day10_2A202601912_HuynhThiHaiChau` |
-| GitHub | <https://github.com/haichauht/K3_Day10_2A202601912_HuynhThiHaiChau> |
+| Repository | `K3-Day10-2A202601912-HuynhThiHaiChau` |
+| GitHub | <https://github.com/haichauht/K3-Day10-2A202601912-HuynhThiHaiChau> |
 | Ngày hoàn thành | 2026-08-06 |
 
 ### Thành viên và phân công
