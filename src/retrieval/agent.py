@@ -37,7 +37,8 @@ def build_agent(settings: Settings, index: LocalEmbeddingIndex):
             f"{record['content']}"
         )
 
-    llm = build_llm(settings=settings, temperature=0.0)
+    # Chat Completions function tools on GPT-5.6 Luna require reasoning_effort=none.
+    llm = build_llm(settings=settings, temperature=0.0, reasoning_effort="none")
     return create_agent(
         model=llm,
         tools=[semantic_search_papers, lookup_paper],
@@ -51,9 +52,28 @@ def build_agent(settings: Settings, index: LocalEmbeddingIndex):
 
 
 def run_agent_question(agent: Any, question: str) -> str:
+    return run_agent_question_with_trace(agent, question)["answer"]
+
+
+def run_agent_question_with_trace(agent: Any, question: str) -> dict[str, Any]:
+    """Run the LangChain agent and expose its tool decisions for the demo UI."""
     result = agent.invoke({"messages": [{"role": "user", "content": question}]})
     messages = result.get("messages", [])
     if not messages:
-        return ""
+        return {"answer": "", "tool_calls": []}
+
+    tool_calls: list[dict[str, Any]] = []
+    for message in messages:
+        for call in getattr(message, "tool_calls", []) or []:
+            tool_calls.append(
+                {
+                    "name": call.get("name", "unknown_tool"),
+                    "args": call.get("args", {}),
+                }
+            )
+
     final_message = messages[-1]
-    return getattr(final_message, "content", str(final_message))
+    return {
+        "answer": getattr(final_message, "content", str(final_message)),
+        "tool_calls": tool_calls,
+    }

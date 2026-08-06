@@ -118,6 +118,19 @@ GOOGLE_API_KEY=your_key_here
 
 Project cũng hỗ trợ `openai`, `anthropic`, `openrouter`, `ollama` và OpenAI-compatible custom endpoint. Chỉ điền credential của provider bạn sử dụng.
 
+Ví dụ cấu hình OpenAI đã được kiểm chứng với bài này:
+
+```dotenv
+LLM_PROVIDER=openai
+LLM_MODEL=gpt-5.6-luna
+OPENAI_REASONING_EFFORT=low
+RAGAS_LLM_MODEL=gpt-4.1-mini
+OPENAI_API_KEY=your_key_here
+```
+
+Agent tự dùng `reasoning_effort=none` khi gọi function tools; evaluator giữ mức cấu hình trong `.env`.
+Khi bật `RUN_RAGAS=1`, Ragas dùng model riêng trong `RAGAS_LLM_MODEL` vì thư viện tự điều chỉnh temperature trong lúc chấm.
+
 Không commit `.env`, API key hoặc secret lên GitHub.
 
 ## 4. Hiểu starter trước khi code
@@ -216,6 +229,20 @@ Sau corruption flow, kiểm tra thêm:
 - `data/results/corruption_log.json`
 - `data/reports/corruption_report.md`
 
+Chạy validation tự động để đối chiếu test-set hash, metrics, lineage, collection và agent artifact:
+
+```powershell
+.\.venv\Scripts\python.exe script\validate_artifacts.py
+```
+
+Artifact nộp hiện đã có Ragas cho đủ ba trạng thái. Khi cần tái tạo các số này trên PowerShell:
+
+```powershell
+$env:RUN_RAGAS='1'
+.\.venv\Scripts\python.exe script\run_phase1.py
+.\.venv\Scripts\python.exe script\run_corruption_flow.py
+```
+
 Các chỉ số trọng tâm:
 
 - `retrieval_hit_rate`
@@ -247,3 +274,27 @@ Mục tiêu không chỉ là pipeline chạy xong, mà phải có bằng chứng
 - [ ] Chứng minh được before/corrupted/repaired bằng số liệu
 - [ ] Không có API key hoặc `.env` trong Git
 - [ ] Đã đối chiếu [Rubric.md](Rubric.md)
+
+## 9. Dashboard demo UX/UI
+
+Dashboard màu hồng đọc trực tiếp các artifact trong `data/`, giúp trình bày rõ toàn bộ luồng dữ liệu và tác động của data quality lên RAG.
+
+Chạy trên Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe script\run_demo.py
+```
+
+Sau đó mở [http://127.0.0.1:8765](http://127.0.0.1:8765).
+
+Dashboard gồm ba phần:
+
+- **Tổng quan:** pipeline từ Crossref đến clean, embedding, ChromaDB, evaluation, corruption và repair; kèm so sánh baseline/corrupted/repaired.
+- **Data lab:** kiểm tra quality, freshness, corruption log, artifact inventory và xem từng bản ghi ở cả ba trạng thái dữ liệu.
+- **RAG playground:** đặt câu hỏi trên từng Chroma collection, chọn chế độ so sánh cố định hoặc OpenAI Agent, xem câu trả lời, nguồn thực tế, similarity score và tool-call trace.
+
+Demo dùng chính embedding model và các Chroma collection đã sinh từ pipeline. Chế độ **So sánh ổn định** không gọi LLM và giữ phép đo ba trạng thái có thể tái lập. Chế độ **OpenAI Agent** đọc cấu hình trong `.env`, để LangChain tự chọn `lookup_paper` hoặc `semantic_search_papers`, sau đó hiển thị đúng tool và nguồn Agent đã dùng.
+
+## 10. Thông tin bài nộp
+
+Đây là bài làm **cá nhân** của Huỳnh Thị Hải Châu — MSSV `2A202601912`. Checkpoint C5 được đóng gói tại [`report/group_report.md`](report/group_report.md) và [`report/individual_2A202601912.md`](report/individual_2A202601912.md). Báo cáo tổng hợp ghi đúng một thành viên, không khai báo phần việc của người khác.

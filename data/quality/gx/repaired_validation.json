@@ -1,0 +1,106 @@
+{
+  "report_name": "repaired",
+  "generated_at": "2026-08-06T07:31:29.467811+00:00",
+  "row_count": 24,
+  "overall_success": true,
+  "passed_checks": 12,
+  "failed_checks": [],
+  "checks": [
+    {
+      "name": "minimum_row_count",
+      "dimension": "volume",
+      "success": true,
+      "observed": 24,
+      "expectation": ">= 10",
+      "affected_rows": 0
+    },
+    {
+      "name": "paper_id_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "paper_id_unique",
+      "dimension": "uniqueness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 duplicated rows",
+      "affected_rows": 0
+    },
+    {
+      "name": "title_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "summary_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "summary_minimum_length",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 summaries shorter than 40 characters",
+      "affected_rows": 0
+    },
+    {
+      "name": "embedding_text_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "published_date_valid",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 invalid",
+      "affected_rows": 0
+    },
+    {
+      "name": "published_not_in_future",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 dates after the current UTC date",
+      "affected_rows": 0
+    },
+    {
+      "name": "age_days_valid",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 invalid",
+      "affected_rows": 0
+    },
+    {
+      "name": "no_suspicious_noise_marker",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 suspicious corruption markers",
+      "affected_rows": 0
+    },
+    {
+      "name": "all_rows_within_freshness_threshold",
+      "dimension": "freshness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 rows older than 180 days",
+      "affected_rows": 0
+    }
+  ]
+}

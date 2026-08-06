@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Dashboard tương tác về luồng dữ liệu và giám sát RAG cho bài Day 10"
+    />
+    <title>Princess Data Lab · RAG Ngày 10</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Trang chủ Princess Data Lab">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 17.5 8.5 13l3 3L20 7.5"/><circle cx="8.5" cy="8" r="3"/></svg>
+        </span>
+        <span>
+          <strong>Princess Data Lab</strong>
+          <small>Trình diễn giám sát RAG</small>
+        </span>
+      </a>
+
+      <nav class="topnav" aria-label="Điều hướng chính">
+        <button class="nav-item active" data-tab="overview">Tổng quan</button>
+        <button class="nav-item" data-tab="quality">Phòng dữ liệu</button>
+        <button class="nav-item" data-tab="playground">Thử nghiệm RAG</button>
+      </nav>
+
+      <div class="topbar-actions">
+        <span class="live-pill"><i></i><span id="liveLabel">Đang kết nối</span></span>
+        <button class="icon-button" id="refreshButton" aria-label="Tải lại dữ liệu bảng điều khiển" title="Tải lại dữ liệu">
+          <svg viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.7-2.6L20 11M4 13l2.2 4.6A7 7 0 0 0 18 15"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="tab-panel active" id="overviewPanel" data-panel="overview">
+        <div class="hero shell">
+          <div class="hero-copy">
+            <span class="eyebrow"><i></i> NGÀY 10 · TỆP BẰNG CHỨNG TRỰC TIẾP</span>
+            <h1><span class="hero-line">Dữ liệu tốt tạo nên</span><em class="hero-line">câu trả lời đáng tin.</em></h1>
+            <p>
+              Theo dõi hành trình từ Crossref tới RAG, quan sát dữ liệu lỗi làm chất lượng trả lời suy giảm,
+              rồi chứng minh khả năng phục hồi từ dữ liệu gốc có truy vết.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" data-go="playground">
+                Thử hỏi đáp RAG
+                <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <button class="secondary-button" data-go="quality">Kiểm tra chất lượng dữ liệu</button>
+            </div>
+            <div class="trust-row">
+              <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Dữ liệu Crossref thật</span>
+              <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> 3 chỉ mục độc lập</span>
+              <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Bộ đánh giá cố định</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Tóm tắt sức khỏe luồng xử lý">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <span class="soft-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 3c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3Z"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+                </span>
+                <span>
+                  <small>SỨC KHỎE LUỒNG XỬ LÝ</small>
+                  <strong>Chạy thử trước trình bày</strong>
+                </span>
+                <span class="health-badge">Tốt</span>
+              </div>
+              <div class="hero-stat-grid">
+                <article><span>Bài báo sạch</span><strong id="heroPapers">—</strong><small>Kho Crossref</small></article>
+                <article><span>Bước kiểm tra</span><strong id="heroChecks">—</strong><small>Dữ liệu gốc đạt</small></article>
+                <article><span>Câu hỏi đánh giá</span><strong id="heroSamples">—</strong><small>Dùng chung cho 3 trạng thái</small></article>
+                <article><span>Bộ sưu tập</span><strong>3</strong><small>Tách biệt hoàn toàn</small></article>
+              </div>
+              <div class="mini-recovery">
+                <div class="mini-recovery-copy">
+                  <span>Phục hồi truy xuất</span>
+                  <strong id="recoveryLabel">—</strong>
+                </div>
+                <div class="spark-bars" id="heroSpark" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="floating-chip chip-top"><span>12/12</span> kiểm tra chất lượng</div>
+            <div class="floating-chip chip-bottom"><span>0%</span> đánh giá dự phòng</div>
+          </div>
+        </div>
+
+        <section class="shell section-block">
+          <div class="section-heading split-heading">
+            <div>
+              <span class="eyebrow">LUỒNG DỮ LIỆU ĐẦU–CUỐI</span>
+              <h2>Một quy trình, đầy đủ bằng chứng.</h2>
+              <p>Chọn từng bước để xem đầu vào, đầu ra và tệp bằng chứng tương ứng.</p>
+            </div>
+            <div class="legend" aria-label="Chú thích màu của luồng">
+              <span><i class="legend-data"></i>Dữ liệu</span>
+              <span><i class="legend-model"></i>Mô hình</span>
+              <span><i class="legend-observe"></i>Giám sát</span>
+            </div>
+          </div>
+          <div class="flow-shell">
+            <div class="flow-track" id="flowTrack" aria-label="Các bước của luồng dữ liệu"></div>
+            <div class="flow-detail" id="flowDetail">
+              <div class="flow-detail-header">
+                <span class="flow-detail-index">01</span>
+                <div class="flow-detail-title">
+                  <small>ĐANG TẢI NỘI DUNG</small>
+                  <h3>Câu chuyện của luồng xử lý</h3>
+                  <p>Mỗi bước sẽ hiển thị mục đích, đầu vào, cách hoạt động, đầu ra và câu nói demo.</p>
+                </div>
+                <span class="flow-detail-value">Trực tiếp</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="shell section-block">
+          <div class="section-heading">
+            <span class="eyebrow">TRƯỚC LỖI · PHÁT SINH LỖI · PHỤC HỒI</span>
+            <h2>Trạng thái dữ liệu thay đổi, chất lượng RAG thay đổi.</h2>
+            <p>Phép so sánh dùng cùng bộ kiểm thử, mô hình embedding, top-k và bộ đánh giá.</p>
+          </div>
+          <div class="state-summary-grid" id="stateCards"></div>
+          <div class="comparison-card">
+            <div class="comparison-header">
+              <div>
+                <span class="eyebrow">BIẾN ĐỘNG CHỈ SỐ</span>
+                <h3>Dữ liệu gốc → Dữ liệu lỗi → Đã phục hồi</h3>
+              </div>
+              <span class="fixed-hash"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg> Bộ kiểm thử cố định</span>
+            </div>
+            <div class="metric-chart" id="metricChart"></div>
+          </div>
+        </section>
+
+        <section class="insight-strip">
+          <div class="shell insight-content">
+            <span class="insight-mark">“</span>
+            <div>
+              <span class="eyebrow">KẾT LUẬN TRÌNH BÀY</span>
+              <h2 id="takeawayText">Dữ liệu lỗi làm truy xuất suy giảm; dữ liệu gốc có truy vết giúp phục hồi có kiểm chứng.</h2>
+            </div>
+            <button class="secondary-button light" data-go="playground">Kiểm chứng bằng hỏi đáp</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="tab-panel" id="qualityPanel" data-panel="quality">
+        <div class="subpage-hero shell">
+          <div>
+            <span class="eyebrow">PHÒNG GIÁM SÁT DỮ LIỆU</span>
+            <h1>Nhìn thấy lỗi <em>trước khi</em> hệ thống trả lời sai.</h1>
+            <p>Đổi trạng thái dữ liệu để xem các kiểm tra chất lượng, độ mới và bản ghi thay đổi theo thời gian thực.</p>
+          </div>
+          <div class="state-switch" id="qualityStateSwitch" aria-label="Chọn trạng thái dữ liệu">
+            <button class="active" data-state="baseline">Dữ liệu gốc</button>
+            <button data-state="corrupted">Dữ liệu lỗi</button>
+            <button data-state="repaired">Đã phục hồi</button>
+          </div>
+        </div>
+
+        <div class="shell quality-layout">
+          <section class="quality-overview-card card-surface">
+            <div class="card-heading">
+              <div><span class="eyebrow">ĐIỂM CHẤT LƯỢNG</span><h2 id="qualityTitle">Sức khỏe dữ liệu gốc</h2></div>
+              <span class="state-tag baseline" id="qualityStateTag">Dữ liệu gốc</span>
+            </div>
+            <div class="quality-score-wrap">
+              <div class="quality-ring" id="qualityRing"><div><strong id="qualityScore">—</strong><span>kiểm tra đạt</span></div></div>
+              <div class="quality-highlights">
+                <div><span>Tổng số dòng</span><strong id="qualityRows">—</strong></div>
+                <div><span>Bài báo duy nhất</span><strong id="qualityUnique">—</strong></div>
+                <div><span>Kiểm tra lỗi</span><strong id="qualityFailed">—</strong></div>
+              </div>
+            </div>
+            <div class="quality-callout" id="qualityCallout"></div>
+          </section>
+
+          <section class="freshness-card card-surface">
+            <div class="card-heading">
+              <div><span class="eyebrow">ĐỘ MỚI DỮ LIỆU</span><h2>Độ mới của ngày công bố</h2></div>
+              <span class="status-dot-badge" id="freshnessBadge"><i></i>—</span>
+            </div>
+            <div class="freshness-visual">
+              <div class="freshness-line"><span id="freshnessFill"></span><i id="freshnessMarker"></i></div>
+              <div class="freshness-labels"><span>Mới</span><span>Ngưỡng 180 ngày</span><span>Quá cũ</span></div>
+            </div>
+            <div class="freshness-stats">
+              <div><span>Mới nhất</span><strong id="freshLatest">—</strong></div>
+              <div><span>Cũ nhất</span><strong id="freshOldest">—</strong></div>
+              <div><span>Dòng quá cũ</span><strong id="freshStale">—</strong></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="shell checks-and-events">
+          <section class="card-surface checks-card">
+            <div class="card-heading">
+              <div><span class="eyebrow">KIỂM TRA CHẤT LƯỢNG</span><h2>Luồng xử lý kiểm tra những gì?</h2></div>
+              <span class="check-count" id="checkCount">—</span>
+            </div>
+            <div class="checks-list" id="checksList"></div>
+          </section>
+          <section class="card-surface events-card">
+            <div class="card-heading">
+              <div><span class="eyebrow">LỖI CÓ KIỂM SOÁT</span><h2>Dòng thời gian tạo lỗi</h2></div>
+              <span class="event-count" id="eventCount">6 sự kiện</span>
+            </div>
+            <div class="event-timeline" id="eventTimeline"></div>
+          </section>
+        </div>
+
+        <section class="shell data-explorer card-surface">
+          <div class="card-heading explorer-heading">
+            <div><span class="eyebrow">KIỂM TRA DỮ LIỆU</span><h2>Tìm trong dữ liệu đã làm sạch</h2></div>
+            <form class="record-controls" id="recordSearchForm">
+              <select id="recordState" aria-label="Trạng thái dữ liệu bản ghi">
+                <option value="baseline">Dữ liệu gốc</option>
+                <option value="corrupted">Dữ liệu lỗi</option>
+                <option value="repaired">Dữ liệu đã phục hồi</option>
+              </select>
+              <label class="search-input">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                <input id="recordQuery" placeholder="Tìm tiêu đề, DOI, tác giả…" />
+              </label>
+              <button class="small-primary" type="submit">Tìm</button>
+            </form>
+          </div>
+          <div class="table-meta"><span id="recordCount">Đang tải bản ghi…</span><span>Hiển thị tối đa 12 dòng</span></div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Bài báo</th><th>Ngày công bố</th><th>Tuổi dữ liệu</th><th>Tóm tắt</th><th>Trạng thái</th></tr></thead>
+              <tbody id="recordsTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="shell artifact-section">
+          <div class="section-heading split-heading">
+            <div><span class="eyebrow">DẤU VẾT KIỂM TOÁN</span><h2>Mọi kết luận đều có tệp bằng chứng.</h2><p>Duyệt các tệp tạo nên số liệu trên bảng điều khiển này.</p></div>
+            <span class="artifact-total" id="artifactTotal">— tệp</span>
+          </div>
+          <div class="artifact-grid" id="artifactGrid"></div>
+        </section>
+      </section>
+
+      <section class="tab-panel" id="playgroundPanel" data-panel="playground">
+        <div class="subpage-hero shell playground-hero">
+          <div>
+            <span class="eyebrow">THỬ NGHIỆM RAG CÓ NGUỒN</span>
+            <h1>Hỏi kho dữ liệu. Xem ngay <em>bằng chứng.</em></h1>
+            <p>So sánh câu trả lời và nguồn truy xuất giữa ba bộ sưu tập ChromaDB.</p>
+          </div>
+          <div class="rag-config-summary">
+            <div><span>Embedding</span><strong>MiniLM-L6-v2</strong></div>
+            <div><span>Tìm kiếm</span><strong>Cosine · top-4</strong></div>
+            <div><span>Nguồn tham chiếu</span><strong>Chỉ dùng kho cục bộ</strong></div>
+          </div>
+        </div>
+
+        <div class="shell playground-layout">
+          <aside class="playground-sidebar card-surface">
+            <div>
+              <span class="eyebrow">CHỌN BỘ SƯU TẬP</span>
+              <h2>Trạng thái dữ liệu</h2>
+            </div>
+            <div class="collection-picker" id="collectionPicker">
+              <button class="collection-option active" data-state="baseline">
+                <i class="collection-icon baseline-icon"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></i>
+                <span><strong>Dữ liệu gốc</strong><small>Kho tham chiếu sạch</small></span><em>24</em>
+              </button>
+              <button class="collection-option" data-state="corrupted">
+                <i class="collection-icon corrupted-icon"><svg viewBox="0 0 24 24"><path d="M12 3 2.8 19h18.4L12 3Z"/><path d="M12 9v4m0 3h.01"/></svg></i>
+                <span><strong>Dữ liệu lỗi</strong><small>Lỗi dữ liệu có kiểm soát</small></span><em>20</em>
+              </button>
+              <button class="collection-option" data-state="repaired">
+                <i class="collection-icon repaired-icon"><svg viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.7-2.6L20 11M4 13l2.2 4.6A7 7 0 0 0 18 15"/></svg></i>
+                <span><strong>Đã phục hồi</strong><small>Dựng lại từ dữ liệu gốc</small></span><em>24</em>
+              </button>
+            </div>
+            <div class="collection-detail" id="collectionDetail">
+              <span>Bộ sưu tập đang dùng</span>
+              <strong>papers-baseline</strong>
+              <small>Chất lượng 12/12 · Mới</small>
+            </div>
+            <div class="answer-mode-card">
+              <span class="eyebrow">CHẾ ĐỘ TRẢ LỜI</span>
+              <div class="answer-mode-switch" id="answerModeSwitch">
+                <button class="active" data-mode="controlled" type="button">
+                  <strong>So sánh ổn định</strong>
+                  <small>Trích xuất cố định, không gọi LLM</small>
+                </button>
+                <button data-mode="agent" type="button">
+                  <strong>OpenAI Agent</strong>
+                  <small>LangChain tự chọn công cụ</small>
+                </button>
+              </div>
+              <p id="answerModeDescription">Dùng cùng một quy tắc truy xuất để đo công bằng trên ba trạng thái dữ liệu.</p>
+            </div>
+            <div class="sidebar-note">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg>
+              <p>Phần hỏi đáp chỉ trả lời từ kho dữ liệu đang chọn. Mở phần nguồn để kiểm tra căn cứ.</p>
+            </div>
+          </aside>
+
+          <section class="chat-card card-surface">
+            <div class="chat-header">
+              <div class="assistant-avatar"><svg viewBox="0 0 24 24"><path d="M9 3h6l1 4h3v11H5V7h3l1-4Z"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><path d="M9 16h6"/></svg></div>
+              <div><strong>Princess · Chuyên gia RAG</strong><span><i></i> <b id="chatModeLabel">So sánh ổn định</b> · dùng nguồn từ <em id="chatCollectionLabel">papers-baseline</em></span></div>
+              <button class="icon-button" id="clearChat" aria-label="Xóa cuộc trò chuyện" title="Xóa cuộc trò chuyện">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7m4 4v6m4-6v6"/></svg>
+              </button>
+            </div>
+            <div class="suggestion-wrap">
+              <span>Thử câu hỏi trong bộ đánh giá (giữ nguyên tiếng Anh theo dữ liệu gốc)</span>
+              <div class="suggestion-list" id="suggestionList"></div>
+            </div>
+            <div class="chat-messages" id="chatMessages" aria-live="polite">
+              <div class="message assistant-message">
+                <div class="message-avatar">P</div>
+                <div class="message-body">
+                  <span class="message-author">Princess</span>
+                  <div class="message-bubble">
+                    Chào bạn! Hãy chọn trạng thái dữ liệu và chế độ trả lời. Chế độ So sánh ổn định dùng quy tắc cố định;
+                    OpenAI Agent dùng LangChain để tự gọi công cụ tra cứu và tổng hợp câu trả lời từ nguồn.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="chat-composer" id="chatForm">
+              <div class="composer-input">
+                <textarea id="chatInput" rows="1" maxlength="600" placeholder="Nhập câu hỏi về kho dữ liệu…"></textarea>
+                <span class="composer-hint"><kbd>Enter</kbd> gửi · <kbd>Shift</kbd> + <kbd>Enter</kbd> xuống dòng</span>
+              </div>
+              <button class="send-button" id="sendButton" type="submit" aria-label="Gửi câu hỏi">
+                <svg viewBox="0 0 24 24"><path d="m4 4 17 8-17 8 3-8-3-8Z"/><path d="M7 12h14"/></svg>
+              </button>
+            </form>
+          </section>
+        </div>
+
+        <section class="shell demo-script card-surface">
+          <div><span class="eyebrow">KỊCH BẢN TRÌNH BÀY 60 GIÂY</span><h2>Trình tự gợi ý</h2></div>
+          <ol>
+            <li><span>01</span><p><strong>Trình bày luồng.</strong> Dữ liệu gốc → làm sạch → ChromaDB → RAG → giám sát.</p></li>
+            <li><span>02</span><p><strong>Hỏi dữ liệu gốc.</strong> Mở phần nguồn và chỉ ra bài báo đáp án được truy xuất.</p></li>
+            <li><span>03</span><p><strong>Chuyển sang dữ liệu lỗi.</strong> Giữ nguyên câu hỏi để thấy tỷ lệ truy xuất đúng, F1 và điểm đánh giá giảm.</p></li>
+            <li><span>04</span><p><strong>Chuyển sang dữ liệu phục hồi.</strong> Chỉ số và chất lượng trở lại mức ban đầu từ bản lưu dữ liệu gốc.</p></li>
+          </ol>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

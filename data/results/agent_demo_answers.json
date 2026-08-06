@@ -1,0 +1,17 @@
+{
+  "backend": "langchain_agent",
+  "answers": [
+    {
+      "question": "What is the main finding or topic of \"The Policy Process Literature\"?",
+      "answer": "\u201cThe Policy Process Literature\u201d reviews major policy-process theories\u2014including punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms. Its central finding is that these approaches converge on the view that policy change emerges from a complex, stochastic process shaped by many heterogeneous inputs that vary across time and policy areas.\n\nThe chapter therefore develops the theoretical basis for a **mixture perspective on politics**, drawing particularly on stochastic models such as the theory of serial judgment and the dynamic model of choice for public policy."
+    },
+    {
+      "question": "Who authored \"The Policy Process Literature\"?",
+      "answer": "\"The Policy Process Literature\" was authored by **Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew**."
+    },
+    {
+      "question": "When was \"The Policy Process Literature\" published?",
+      "answer": "\u201cThe Policy Process Literature\u201d was published on **August 6, 2026**, according to the indexed corpus."
+    }
+  ]
+}

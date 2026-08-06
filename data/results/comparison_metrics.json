@@ -1,0 +1,430 @@
+{
+  "generated_at": "2026-08-06T07:31:29.496016+00:00",
+  "test_set_path": "C:\\VinUni-Lab\\K3_Day10_2A202601912_HuynhThiHaiChau\\data\\eval\\test_set.json",
+  "test_set_sha256": "af746223bd48c30b1ed0aacf938c2843c9bfd1232692d355ed28169a42b44280",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "top_k": 4,
+  "baseline": {
+    "metrics": {
+      "samples": 16,
+      "retrieval_hit_rate": 1.0,
+      "mean_token_f1": 1.0,
+      "judge_accuracy": 1.0,
+      "mean_judge_score": 5,
+      "judge_backend_counts": {
+        "llm": 16
+      },
+      "judge_fallback_rate": 0.0,
+      "ragas": {
+        "model": "gpt-4.1-mini",
+        "samples": 16,
+        "answer_relevancy": 0.2412391981357942,
+        "context_precision": 0.9774305555236689,
+        "context_recall": 1.0,
+        "faithfulness": 1.0
+      }
+    },
+    "quality": {
+      "report_name": "baseline",
+      "generated_at": "2026-08-06T07:28:15.487876+00:00",
+      "row_count": 24,
+      "overall_success": true,
+      "passed_checks": 12,
+      "failed_checks": [],
+      "checks": [
+        {
+          "name": "minimum_row_count",
+          "dimension": "volume",
+          "success": true,
+          "observed": 24,
+          "expectation": ">= 10",
+          "affected_rows": 0
+        },
+        {
+          "name": "paper_id_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "paper_id_unique",
+          "dimension": "uniqueness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 duplicated rows",
+          "affected_rows": 0
+        },
+        {
+          "name": "title_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "summary_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "summary_minimum_length",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 summaries shorter than 40 characters",
+          "affected_rows": 0
+        },
+        {
+          "name": "embedding_text_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "published_date_valid",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 invalid",
+          "affected_rows": 0
+        },
+        {
+          "name": "published_not_in_future",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 dates after the current UTC date",
+          "affected_rows": 0
+        },
+        {
+          "name": "age_days_valid",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 invalid",
+          "affected_rows": 0
+        },
+        {
+          "name": "no_suspicious_noise_marker",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 suspicious corruption markers",
+          "affected_rows": 0
+        },
+        {
+          "name": "all_rows_within_freshness_threshold",
+          "dimension": "freshness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 rows older than 180 days",
+          "affected_rows": 0
+        }
+      ]
+    },
+    "freshness": {
+      "generated_at": "2026-08-06T07:28:15.490837+00:00",
+      "freshness_threshold_days": 180,
+      "latest_published": "2026-08-06",
+      "oldest_published": "2026-08-06",
+      "stale_rows": 0,
+      "invalid_rows": 0,
+      "total_rows": 24,
+      "stale_ratio": 0.0,
+      "is_fresh": true,
+      "status": "fresh"
+    }
+  },
+  "corrupted": {
+    "metrics": {
+      "samples": 16,
+      "retrieval_hit_rate": 0.0,
+      "mean_token_f1": 0.792063492063492,
+      "judge_accuracy": 0.75,
+      "mean_judge_score": 4.0625,
+      "judge_backend_counts": {
+        "llm": 16
+      },
+      "judge_fallback_rate": 0.0,
+      "ragas": {
+        "model": "gpt-4.1-mini",
+        "samples": 16,
+        "answer_relevancy": 0.12423516923962849,
+        "context_precision": 0.8906249999632813,
+        "context_recall": 0.875,
+        "faithfulness": 0.34375
+      }
+    },
+    "quality": {
+      "report_name": "corrupted",
+      "generated_at": "2026-08-06T07:30:25.142448+00:00",
+      "row_count": 20,
+      "overall_success": false,
+      "passed_checks": 7,
+      "failed_checks": [
+        "paper_id_unique",
+        "summary_complete",
+        "summary_minimum_length",
+        "no_suspicious_noise_marker",
+        "all_rows_within_freshness_threshold"
+      ],
+      "checks": [
+        {
+          "name": "minimum_row_count",
+          "dimension": "volume",
+          "success": true,
+          "observed": 20,
+          "expectation": ">= 10",
+          "affected_rows": 0
+        },
+        {
+          "name": "paper_id_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "paper_id_unique",
+          "dimension": "uniqueness",
+          "success": false,
+          "observed": 2,
+          "expectation": "0 duplicated rows",
+          "affected_rows": 2
+        },
+        {
+          "name": "title_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "summary_complete",
+          "dimension": "completeness",
+          "success": false,
+          "observed": 1,
+          "expectation": "0 missing",
+          "affected_rows": 1
+        },
+        {
+          "name": "summary_minimum_length",
+          "dimension": "validity",
+          "success": false,
+          "observed": 1,
+          "expectation": "0 summaries shorter than 40 characters",
+          "affected_rows": 1
+        },
+        {
+          "name": "embedding_text_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "published_date_valid",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 invalid",
+          "affected_rows": 0
+        },
+        {
+          "name": "published_not_in_future",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 dates after the current UTC date",
+          "affected_rows": 0
+        },
+        {
+          "name": "age_days_valid",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 invalid",
+          "affected_rows": 0
+        },
+        {
+          "name": "no_suspicious_noise_marker",
+          "dimension": "validity",
+          "success": false,
+          "observed": 1,
+          "expectation": "0 suspicious corruption markers",
+          "affected_rows": 1
+        },
+        {
+          "name": "all_rows_within_freshness_threshold",
+          "dimension": "freshness",
+          "success": false,
+          "observed": 1,
+          "expectation": "0 rows older than 180 days",
+          "affected_rows": 1
+        }
+      ]
+    },
+    "freshness": {
+      "generated_at": "2026-08-06T07:30:25.145417+00:00",
+      "freshness_threshold_days": 180,
+      "latest_published": "2026-08-06",
+      "oldest_published": "2016-08-08",
+      "stale_rows": 1,
+      "invalid_rows": 0,
+      "total_rows": 20,
+      "stale_ratio": 0.05,
+      "is_fresh": false,
+      "status": "stale"
+    }
+  },
+  "repaired": {
+    "metrics": {
+      "samples": 16,
+      "retrieval_hit_rate": 1.0,
+      "mean_token_f1": 1.0,
+      "judge_accuracy": 1.0,
+      "mean_judge_score": 5,
+      "judge_backend_counts": {
+        "llm": 16
+      },
+      "judge_fallback_rate": 0.0,
+      "ragas": {
+        "model": "gpt-4.1-mini",
+        "samples": 16,
+        "answer_relevancy": 0.24689246985875668,
+        "context_precision": 0.9774305555236689,
+        "context_recall": 1.0,
+        "faithfulness": 0.96875
+      }
+    },
+    "quality": {
+      "report_name": "repaired",
+      "generated_at": "2026-08-06T07:31:29.467811+00:00",
+      "row_count": 24,
+      "overall_success": true,
+      "passed_checks": 12,
+      "failed_checks": [],
+      "checks": [
+        {
+          "name": "minimum_row_count",
+          "dimension": "volume",
+          "success": true,
+          "observed": 24,
+          "expectation": ">= 10",
+          "affected_rows": 0
+        },
+        {
+          "name": "paper_id_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "paper_id_unique",
+          "dimension": "uniqueness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 duplicated rows",
+          "affected_rows": 0
+        },
+        {
+          "name": "title_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "summary_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "summary_minimum_length",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 summaries shorter than 40 characters",
+          "affected_rows": 0
+        },
+        {
+          "name": "embedding_text_complete",
+          "dimension": "completeness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 missing",
+          "affected_rows": 0
+        },
+        {
+          "name": "published_date_valid",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 invalid",
+          "affected_rows": 0
+        },
+        {
+          "name": "published_not_in_future",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 dates after the current UTC date",
+          "affected_rows": 0
+        },
+        {
+          "name": "age_days_valid",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 invalid",
+          "affected_rows": 0
+        },
+        {
+          "name": "no_suspicious_noise_marker",
+          "dimension": "validity",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 suspicious corruption markers",
+          "affected_rows": 0
+        },
+        {
+          "name": "all_rows_within_freshness_threshold",
+          "dimension": "freshness",
+          "success": true,
+          "observed": 0,
+          "expectation": "0 rows older than 180 days",
+          "affected_rows": 0
+        }
+      ]
+    },
+    "freshness": {
+      "generated_at": "2026-08-06T07:31:29.471619+00:00",
+      "freshness_threshold_days": 180,
+      "latest_published": "2026-08-06",
+      "oldest_published": "2026-08-06",
+      "stale_rows": 0,
+      "invalid_rows": 0,
+      "total_rows": 24,
+      "stale_ratio": 0.0,
+      "is_fresh": true,
+      "status": "fresh"
+    }
+  }
+}

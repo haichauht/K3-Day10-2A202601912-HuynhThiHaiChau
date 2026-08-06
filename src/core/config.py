@@ -46,6 +46,8 @@ class Settings:
     model_name: str
     google_api_key: str | None
     openai_api_key: str | None
+    openai_reasoning_effort: str
+    ragas_model_name: str | None
     anthropic_api_key: str | None
     openrouter_api_key: str | None
     openrouter_base_url: str
@@ -71,7 +73,8 @@ def load_settings(project_dir: Path | None = None) -> Settings:
     root = (project_dir or Path(__file__).resolve().parents[2]).resolve()
     workspace = root.parent
     freshness_threshold_days = 180
-    source_from_date = (datetime.now(UTC).date() - timedelta(days=freshness_threshold_days)).isoformat()
+    source_to_date = datetime.now(UTC).date()
+    source_from_date = (source_to_date - timedelta(days=freshness_threshold_days)).isoformat()
 
     load_dotenv(workspace / ".env")
     load_dotenv(root / ".env", override=False)
@@ -113,6 +116,8 @@ def load_settings(project_dir: Path | None = None) -> Settings:
         model_name=os.getenv("LLM_MODEL", "gemini-2.5-flash"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
+        openai_reasoning_effort=os.getenv("OPENAI_REASONING_EFFORT", "low"),
+        ragas_model_name=os.getenv("RAGAS_LLM_MODEL", "gpt-4.1-mini"),
         anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
         openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
         openrouter_base_url=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
@@ -125,7 +130,9 @@ def load_settings(project_dir: Path | None = None) -> Settings:
         repaired_collection_name="papers-repaired",
         source_api="Crossref REST API",
         source_query="agentic retrieval augmented generation large language model",
-        source_filter=f"from-pub-date:{source_from_date},has-abstract:true",
+        source_filter=(
+            f"from-pub-date:{source_from_date},until-pub-date:{source_to_date.isoformat()},has-abstract:true"
+        ),
         max_results=24,
         top_k=4,
         freshness_threshold_days=freshness_threshold_days,

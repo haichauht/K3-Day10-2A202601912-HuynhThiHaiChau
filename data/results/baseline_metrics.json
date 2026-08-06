@@ -1,0 +1,19 @@
+{
+  "samples": 16,
+  "retrieval_hit_rate": 1.0,
+  "mean_token_f1": 1.0,
+  "judge_accuracy": 1.0,
+  "mean_judge_score": 5,
+  "judge_backend_counts": {
+    "llm": 16
+  },
+  "judge_fallback_rate": 0.0,
+  "ragas": {
+    "model": "gpt-4.1-mini",
+    "samples": 16,
+    "answer_relevancy": 0.2412391981357942,
+    "context_precision": 0.9774305555236689,
+    "context_recall": 1.0,
+    "faithfulness": 1.0
+  }
+}

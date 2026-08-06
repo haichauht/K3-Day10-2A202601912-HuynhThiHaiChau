@@ -1,0 +1,112 @@
+{
+  "report_name": "corrupted",
+  "generated_at": "2026-08-06T07:30:25.142448+00:00",
+  "row_count": 20,
+  "overall_success": false,
+  "passed_checks": 7,
+  "failed_checks": [
+    "paper_id_unique",
+    "summary_complete",
+    "summary_minimum_length",
+    "no_suspicious_noise_marker",
+    "all_rows_within_freshness_threshold"
+  ],
+  "checks": [
+    {
+      "name": "minimum_row_count",
+      "dimension": "volume",
+      "success": true,
+      "observed": 20,
+      "expectation": ">= 10",
+      "affected_rows": 0
+    },
+    {
+      "name": "paper_id_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "paper_id_unique",
+      "dimension": "uniqueness",
+      "success": false,
+      "observed": 2,
+      "expectation": "0 duplicated rows",
+      "affected_rows": 2
+    },
+    {
+      "name": "title_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "summary_complete",
+      "dimension": "completeness",
+      "success": false,
+      "observed": 1,
+      "expectation": "0 missing",
+      "affected_rows": 1
+    },
+    {
+      "name": "summary_minimum_length",
+      "dimension": "validity",
+      "success": false,
+      "observed": 1,
+      "expectation": "0 summaries shorter than 40 characters",
+      "affected_rows": 1
+    },
+    {
+      "name": "embedding_text_complete",
+      "dimension": "completeness",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 missing",
+      "affected_rows": 0
+    },
+    {
+      "name": "published_date_valid",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 invalid",
+      "affected_rows": 0
+    },
+    {
+      "name": "published_not_in_future",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 dates after the current UTC date",
+      "affected_rows": 0
+    },
+    {
+      "name": "age_days_valid",
+      "dimension": "validity",
+      "success": true,
+      "observed": 0,
+      "expectation": "0 invalid",
+      "affected_rows": 0
+    },
+    {
+      "name": "no_suspicious_noise_marker",
+      "dimension": "validity",
+      "success": false,
+      "observed": 1,
+      "expectation": "0 suspicious corruption markers",
+      "affected_rows": 1
+    },
+    {
+      "name": "all_rows_within_freshness_threshold",
+      "dimension": "freshness",
+      "success": false,
+      "observed": 1,
+      "expectation": "0 rows older than 180 days",
+      "affected_rows": 1
+    }
+  ]
+}

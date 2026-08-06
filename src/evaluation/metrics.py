@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from statistics import mean
 import os
 import sys
@@ -10,7 +10,7 @@ from typing import Any
 from datasets import Dataset
 from pydantic import BaseModel, Field
 
-from core.config import Settings
+from core.config import Settings, normalized_provider
 from core.utils import normalize_whitespace, read_json, write_json
 from retrieval.embeddings import MiniLMEmbeddings
 from retrieval.index import LocalEmbeddingIndex
@@ -22,6 +22,7 @@ class JudgeVerdict(BaseModel):
     score: int = Field(ge=1, le=5)
     correct: bool
     reasoning: str
+    backend: str = "llm"
 
 
 @dataclass(frozen=True)
@@ -60,13 +61,15 @@ Return:
 """.strip()
     try:
         llm = build_llm(settings=settings, temperature=0.0).with_structured_output(JudgeVerdict)
-        return llm.invoke(prompt)
+        verdict = llm.invoke(prompt)
+        return verdict.model_copy(update={"backend": "llm"})
     except Exception:
         score = 5 if _token_f1(reference, prediction) >= 0.95 else 3 if _token_f1(reference, prediction) >= 0.5 else 1
         return JudgeVerdict(
             score=score,
             correct=score >= 3,
             reasoning="Fallback heuristic judge used because the LLM evaluator was unavailable.",
+            backend="token_f1_fallback",
         )
 
 
@@ -89,13 +92,27 @@ def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, A
                 "contexts": [item["retrieved_contexts"] for item in answers],
             }
         )
+        ragas_settings = settings
+        if normalized_provider(settings) == "openai" and settings.ragas_model_name:
+            # Ragas temporarily adjusts temperature per metric. GPT-5.6 rejects
+            # those values, so use a non-reasoning OpenAI model for this pass.
+            ragas_settings = replace(settings, model_name=settings.ragas_model_name)
+
         result = evaluate(
             dataset,
             metrics=[answer_relevancy, context_precision, context_recall, faithfulness],
-            llm=build_llm(settings=settings, temperature=0.0),
+            llm=build_llm(settings=ragas_settings, temperature=0.0),
             embeddings=MiniLMEmbeddings(settings.embedding_model),
         )
-        return dict(result)
+        scores = Dataset.from_list(result.scores).to_pandas()
+        return {
+            "model": ragas_settings.model_name,
+            "samples": len(result.scores),
+            **{
+                column: float(scores[column].mean(skipna=True))
+                for column in scores.columns
+            },
+        }
     except Exception as exc:  # pragma: no cover
         return {"error": f"Ragas evaluation failed: {exc}"}
 
@@ -108,6 +125,8 @@ def evaluate_pipeline(
     answers_output_path,
 ) -> EvaluationBundle:
     test_set = read_json(test_set_path)
+    if not isinstance(test_set, list) or not test_set:
+        raise ValueError(f"Evaluation test set must be a non-empty JSON list: {test_set_path}")
     answers: list[dict[str, Any]] = []
 
     for item in test_set:
@@ -137,6 +156,12 @@ def evaluate_pipeline(
         "judge_accuracy": mean(1.0 if item["judge"]["correct"] else 0.0 for item in answers),
         "mean_judge_score": mean(item["judge"]["score"] for item in answers),
     }
+    backend_counts: dict[str, int] = {}
+    for item in answers:
+        backend = item["judge"].get("backend", "llm")
+        backend_counts[backend] = backend_counts.get(backend, 0) + 1
+    summary["judge_backend_counts"] = backend_counts
+    summary["judge_fallback_rate"] = backend_counts.get("token_f1_fallback", 0) / len(answers)
     summary["ragas"] = _run_ragas(settings, answers)
 
     bundle = EvaluationBundle(summary=summary, answers=answers)

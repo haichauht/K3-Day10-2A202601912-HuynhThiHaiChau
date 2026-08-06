@@ -8,7 +8,11 @@ from langchain_openai import ChatOpenAI
 from core.config import Settings, normalized_provider, require_llm_credentials
 
 
-def build_llm(settings: Settings, temperature: float = 0.0):
+def build_llm(
+    settings: Settings,
+    temperature: float = 0.0,
+    reasoning_effort: str | None = None,
+):
     provider = normalized_provider(settings)
     require_llm_credentials(settings)
 
@@ -19,11 +23,12 @@ def build_llm(settings: Settings, temperature: float = 0.0):
             temperature=temperature,
         )
     if provider == "openai":
-        return ChatOpenAI(
-            model=settings.model_name,
-            api_key=settings.openai_api_key,
-            temperature=temperature,
-        )
+        kwargs = {"model": settings.model_name, "api_key": settings.openai_api_key}
+        if settings.model_name.lower().startswith("gpt-5"):
+            kwargs["reasoning_effort"] = reasoning_effort or settings.openai_reasoning_effort
+        else:
+            kwargs["temperature"] = temperature
+        return ChatOpenAI(**kwargs)
     if provider == "anthropic":
         return ChatAnthropic(
             model=settings.model_name,

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -18,6 +19,15 @@ def write_json(path: Path, payload: Any) -> None:
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def dataframe_records(df) -> list[dict[str, Any]]:
+    """Convert a dataframe to JSON-safe records, including numpy scalar values."""
+    return json.loads(df.to_json(orient="records", date_format="iso"))
+
+
+def file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def write_csv(df, path: Path) -> None:

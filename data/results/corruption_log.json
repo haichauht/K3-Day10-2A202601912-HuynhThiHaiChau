@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-08-06T07:29:04.846432+00:00",
+  "deterministic": true,
+  "baseline_rows": 24,
+  "corrupted_rows": 20,
+  "unique_rows_after_corruption": 19,
+  "events": [
+    {
+      "type": "drop_latest_records",
+      "affected_paper_ids": [
+        "10.1093/9780197900413.003.0002",
+        "10.1093/9780197900413.003.0003",
+        "10.1093/9780197900413.003.0004",
+        "10.1093/9780197900413.003.0005",
+        "10.1093/9780197900413.003.0006"
+      ],
+      "count": 5,
+      "parameter": {
+        "fraction": 0.2
+      }
+    },
+    {
+      "type": "blank_summary",
+      "affected_paper_ids": [
+        "10.1093/9780197900413.003.0007"
+      ],
+      "count": 1,
+      "parameter": {
+        "replacement": "empty string"
+      }
+    },
+    {
+      "type": "inject_summary_noise",
+      "affected_paper_ids": [
+        "10.1093/9780197900413.003.0009"
+      ],
+      "count": 1,
+      "parameter": {
+        "prefix": "CORRUPTED NOISE zxqv-991 irrelevant tokens."
+      }
+    },
+    {
+      "type": "truncate_title",
+      "affected_paper_ids": [
+        "10.1093/9780197900413.003.0010"
+      ],
+      "count": 1,
+      "parameter": {
+        "original_chars": 23,
+        "new_chars": 9
+      }
+    },
+    {
+      "type": "make_publication_stale",
+      "affected_paper_ids": [
+        "10.1108/ijicc-01-2026-0054"
+      ],
+      "count": 1,
+      "parameter": {
+        "before": "2026-08-06",
+        "after": "2016-08-08"
+      }
+    },
+    {
+      "type": "duplicate_row",
+      "affected_paper_ids": [
+        "10.11157/rsrr1-2-549"
+      ],
+      "count": 1,
+      "parameter": {
+        "duplicate_keeps_same_paper_id": true
+      }
+    }
+  ]
+}

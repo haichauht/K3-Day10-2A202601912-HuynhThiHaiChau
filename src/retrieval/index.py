@@ -87,6 +87,22 @@ class LocalEmbeddingIndex:
         settings: Settings,
         embeddings_output_path: Path | None = None,
     ) -> "LocalEmbeddingIndex":
+        required_columns = {
+            "paper_id",
+            "title",
+            "text_for_embedding",
+            "published",
+            "authors_joined",
+            "categories_joined",
+            "summary",
+            "abs_url",
+            "pdf_url",
+        }
+        missing_columns = sorted(required_columns - set(df.columns))
+        if missing_columns:
+            raise ValueError(f"Cannot build index; dataframe is missing columns: {missing_columns}")
+        if df.empty:
+            raise ValueError("Cannot build an embedding index from an empty dataframe.")
         collection_name = cls._derive_collection_name(settings, embeddings_output_path)
         documents = cls._build_documents(df)
         persist_path = settings.paths.chroma_dir
@@ -118,6 +134,7 @@ class LocalEmbeddingIndex:
                 "embedding_model": settings.embedding_model,
                 "persist_path": str(persist_path),
                 "collection_name": collection_name,
+                "document_count": len(documents),
                 "documents": documents,
             },
         )
@@ -139,10 +156,13 @@ class LocalEmbeddingIndex:
         )
 
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        if not query.strip() or not self.documents:
+            return []
         query_embedding = self.embedding_model.embed_query(query)
+        result_count = min(top_k or self.settings.top_k, len(self.documents))
         results = self.collection.query(
             query_embeddings=[query_embedding],
-            n_results=top_k or self.settings.top_k,
+            n_results=result_count,
             include=["documents", "metadatas", "distances"],
         )
         ids = results.get("ids", [[]])[0]

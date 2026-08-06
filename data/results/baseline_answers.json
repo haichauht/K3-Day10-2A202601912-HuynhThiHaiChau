@@ -1,0 +1,482 @@
+[
+  {
+    "id": "q-001-summary",
+    "question_type": "summary",
+    "question": "What is the main finding or topic of \"The Policy Process Literature\"?",
+    "ground_truth": "Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs.",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0002"
+    ],
+    "answer": "Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs.",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0004"
+    ],
+    "retrieved_contexts": [
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer, accurately identifying the chapter\u2019s review of major policy process theories and its central conclusion about complex, heterogeneous influences on policy change.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-002-authors",
+    "question_type": "authors",
+    "question": "Who authored \"The Policy Process Literature\"?",
+    "ground_truth": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0002"
+    ],
+    "answer": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0004"
+    ],
+    "retrieved_contexts": [
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-003-date",
+    "question_type": "date",
+    "question": "When was \"The Policy Process Literature\" published?",
+    "ground_truth": "2026-08-06",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0002"
+    ],
+    "answer": "2026-08-06",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0003"
+    ],
+    "retrieved_contexts": [
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: 2026-08-06.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-004-categories",
+    "question_type": "categories",
+    "question": "What categories are associated with \"The Policy Process Literature\"?",
+    "ground_truth": "Uncategorized",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0002"
+    ],
+    "answer": "Uncategorized",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0004"
+    ],
+    "retrieved_contexts": [
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: \"Uncategorized.\"",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-005-summary",
+    "question_type": "summary",
+    "question": "What is the main finding or topic of \"The Mixture Model of Politics\"?",
+    "ground_truth": "Abstract This chapter develops the mixture model of politics.",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0003"
+    ],
+    "answer": "Abstract This chapter develops the mixture model of politics.",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0010",
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005"
+    ],
+    "retrieved_contexts": [
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer and identifies the main topic: the chapter develops the mixture model of politics.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-006-authors",
+    "question_type": "authors",
+    "question": "Who authored \"The Mixture Model of Politics\"?",
+    "ground_truth": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0003"
+    ],
+    "answer": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0010",
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005"
+    ],
+    "retrieved_contexts": [
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer, including all three authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-007-date",
+    "question_type": "date",
+    "question": "When was \"The Mixture Model of Politics\" published?",
+    "ground_truth": "2026-08-06",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0003"
+    ],
+    "answer": "2026-08-06",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0010",
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005"
+    ],
+    "retrieved_contexts": [
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: 2026-08-06.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-008-categories",
+    "question_type": "categories",
+    "question": "What categories are associated with \"The Mixture Model of Politics\"?",
+    "ground_truth": "Uncategorized",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0003"
+    ],
+    "answer": "Uncategorized",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0003",
+      "10.1093/9780197900413.003.0010",
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0005"
+    ],
+    "retrieved_contexts": [
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: \"Uncategorized.\"",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-009-summary",
+    "question_type": "summary",
+    "question": "What is the main finding or topic of \"The Comparative Distributional Method\"?",
+    "ground_truth": "Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions.",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0004"
+    ],
+    "answer": "Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions.",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0009",
+      "10.1093/9780197900413.003.0010"
+    ],
+    "retrieved_contexts": [
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer, correctly identifying CDM as a statistical approach for analysing policy change distributions.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-010-authors",
+    "question_type": "authors",
+    "question": "Who authored \"The Comparative Distributional Method\"?",
+    "ground_truth": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0004"
+    ],
+    "answer": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0010",
+      "10.1093/9780197900413.003.0009"
+    ],
+    "retrieved_contexts": [
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer, listing all three authors: Jens Ledet Jensen, Peter B Mortensen, and S\u00f8ren Serritzlew.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-011-date",
+    "question_type": "date",
+    "question": "When was \"The Comparative Distributional Method\" published?",
+    "ground_truth": "2026-08-06",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0004"
+    ],
+    "answer": "2026-08-06",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0009",
+      "10.1093/9780197900413.003.0010"
+    ],
+    "retrieved_contexts": [
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: 2026-08-06.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-012-categories",
+    "question_type": "categories",
+    "question": "What categories are associated with \"The Comparative Distributional Method\"?",
+    "ground_truth": "Uncategorized",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0004"
+    ],
+    "answer": "Uncategorized",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0009",
+      "10.1093/9780197900413.003.0010"
+    ],
+    "retrieved_contexts": [
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Pattern of Politics\nAbstract: Abstract This chapter discusses the main findings of the book and the implications for theory and method, and the empirical applications of the mixture model. It recaps the idea that according to the mixture model, policy change is generated by mixtures of many contributions which vary over time and across issue areas. It highlights two results: country-level factors such as institutional arrangements and degrees of democracy are associated with the shapes of spending change distributions, and similar issues do not have similar distributions across countries. It also stresses the importance of data treatment, and how pooling and aggregation affect distributions. Building on this, the chapter discusses three examples of how the mixture model can be applied beyond public spending. The chapter concludes by discussing how the mixture model and the Comparative Distributional Method can contribute to our understanding of the pattern of politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: \"Uncategorized.\"",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-013-summary",
+    "question_type": "summary",
+    "question": "What is the main finding or topic of \"Measuring Policy Change\"?",
+    "ground_truth": "Abstract The chapter is about how to handle policy change data in comparative distributional analysis.",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0005"
+    ],
+    "answer": "Abstract The chapter is about how to handle policy change data in comparative distributional analysis.",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0009",
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0002"
+    ],
+    "retrieved_contexts": [
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer, identifying the chapter's topic as handling policy change data in comparative distributional analysis.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-014-authors",
+    "question_type": "authors",
+    "question": "Who authored \"Measuring Policy Change\"?",
+    "ground_truth": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0005"
+    ],
+    "answer": "Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0002",
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0009"
+    ],
+    "retrieved_contexts": [
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference authors: Jens Ledet Jensen, Peter B. Mortensen, and S\u00f8ren Serritzlew.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-015-date",
+    "question_type": "date",
+    "question": "When was \"Measuring Policy Change\" published?",
+    "ground_truth": "2026-08-06",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0005"
+    ],
+    "answer": "2026-08-06",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0009",
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0002"
+    ],
+    "retrieved_contexts": [
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Policy Process Literature\nAbstract: Abstract The chapter reviews policy process theories such as punctuated equilibrium theory, the advocacy coalition framework, and policy paradigms, and argues that they converge on the insight that policy change is the result of a complex process, which is shaped by large numbers of heterogeneous inputs. These inputs vary over time and issue areas and contain a stochastic element. This calls for a stochastic process model. The chapter presents two prominent stochastic process models, the theory of serial judgment and the dynamic model of choice for public policy. The mixture model of politics builds on this foundation. Thus, the chapter sets out the theoretical foundations for a mixture perspective on politics.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: 2026-08-06.",
+      "backend": "llm"
+    }
+  },
+  {
+    "id": "q-016-categories",
+    "question_type": "categories",
+    "question": "What categories are associated with \"Measuring Policy Change\"?",
+    "ground_truth": "Uncategorized",
+    "ground_truth_doc_ids": [
+      "10.1093/9780197900413.003.0005"
+    ],
+    "answer": "Uncategorized",
+    "retrieved_doc_ids": [
+      "10.1093/9780197900413.003.0005",
+      "10.1093/9780197900413.003.0009",
+      "10.1093/9780197900413.003.0004",
+      "10.1093/9780197900413.003.0003"
+    ],
+    "retrieved_contexts": [
+      "Title: Measuring Policy Change\nAbstract: Abstract The chapter is about how to handle policy change data in comparative distributional analysis. It identifies three central considerations. It shows, using the mixture model, that pooling and aggregation of observations systematically affect the shape of policy change distributions. This implies that data must be treated consistently across cases to avoid biased comparisons. It then clarifies the relationship between politics and policy change, arguing that although policy changes reflect political processes, distributional patterns in policy change cannot be directly translated into insights about individual contributions to politics. Finally, the chapter presents the spending datasets used in the empirical analyses of the book and introduces CDMethods, an R package designed to implement the Comparative Distributional Method.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: Policy Issues and Mixture Distributions\nAbstract: Abstract This chapter compares policy change distributions across issue areas. It begins with a discussion of issue-area typologies and argues that different issue areas would exhibit distinct distributional shapes but that these differences are unlikely to be uniform across countries. Because policy-making on similar issues is organized in different ways across countries, the number and variation of contributions also differ. Using OECD spending data and the Comparative Distributional Method, the chapter shows that most of the variation in spending change distributions is caused by country-level rather than issue-level factors. The findings suggest that the institutional context and national political structures play a larger role than generic issue characteristics in shaping policy change distributions.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Comparative Distributional Method\nAbstract: Abstract The chapter introduces the Comparative Distributional Method (CDM) as a statistical approach for analysing policy change distributions. It outlines the limitations of relying on conventional methods such as visual inspection of histograms and descriptive measures such as kurtosis and argues that a formal statistical model is needed for distributional analysis in the same way that regression models are used for analysing relationships between variables. Drawing on a class of distributions developed for mixture processes, the chapter presents the CDM, demonstrates how it can be used to model and compare policy change distributions, and introduces the NIG diamond as a tool for visualizing differences in distributional shapes. It also shows how these models enable predictions about policy changes.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06",
+      "Title: The Mixture Model of Politics\nAbstract: Abstract This chapter develops the mixture model of politics. The chapter defines contributions as all stimuli affecting policy, whether arising from lobbying, demographic shifts, institutional processes, or unexpected events. It argues that a policy adopted in a formal arena is the result of long, distributed, and often informal processes of policy-making involving many and changing participants. The chapter formalizes how policy change results from varying numbers of contributions, each containing a stochastic component. The number of contributions varies over time, and across countries and issue areas. The mixture model of politics shows how such variation in contributions leads to predictable patterns of policy change.\nAuthors: Jens Ledet Jensen, Peter B Mortensen, S\u00f8ren Serritzlew\nCategories: Uncategorized\nPublished: 2026-08-06"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0,
+    "judge": {
+      "score": 5,
+      "correct": true,
+      "reasoning": "The model answer exactly matches the reference answer: \"Uncategorized.\"",
+      "backend": "llm"
+    }
+  }
+]
